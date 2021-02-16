@@ -36,9 +36,25 @@ Class Model{
                    return;
                 }
             }
-            echo "Check your post credentials";
+            echo "<p class = 'text-danger'>Check your credentials!</p>";
             return;
         }
+    }
+    
+    public function fetch(){
+        $data = null;
+        $query = "SELECT * FROM articles";
+        if($sql = $this->conn->query($query)){
+            while($row = mysqli_fetch_assoc($sql)){
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function delete($id){
+        $query = "DELETE FROM articles where id = '$id'";
+        return ($sql = $this->conn->query($query)) ?  true : false;
     }
 
 }

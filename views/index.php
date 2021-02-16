@@ -14,6 +14,20 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="articles.php">View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Add</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt5">
@@ -22,7 +36,7 @@
         </div>
         <div class="row">
             <?php 
-        include './model/model.php';
+        include '../model/model.php';
         $model = new Model();
         $create = $model->create();
             ?>
